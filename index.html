@@ -3,53 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>함께 푸는 중학 국어 품사 마스터</title>
+    <title>품사 마스터: 모둠 협동 버전</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="setup-container" class="main-container">
         <h1>👥 모둠 협동 품사 마스터</h1>
-        <p class="subtitle">시작하기 전에 모둠 정보를 입력해 주세요.</p>
+        <p class="subtitle">모둠 인원과 이름을 입력해 주세요.</p>
         <hr>
-        
         <div class="setup-group">
-            <label for="member-count"><strong>📌 모둠 인원 선택:</strong></label>
+            <label><strong>📌 인원 선택:</strong></label>
             <select id="member-count">
                 <option value="2">2명</option>
                 <option value="3">3명</option>
-                <option value="4" selected>4명 (기본)</option>
+                <option value="4" selected>4명</option>
                 <option value="5">5명</option>
                 <option value="6">6명</option>
             </select>
         </div>
-
-        <div id="name-inputs-area">
-            <p class="instruction-text">모둠원 이름을 순서대로 적어주세요:</p>
-        </div>
-
-        <button id="start-quiz-btn" class="btn-main">품사 퀴즈 시작하기 🚀</button>
+        <div id="name-inputs-area"></div>
+        <button id="start-quiz-btn" class="btn-main">학습 시작하기 🚀</button>
     </div>
 
     <div id="quiz-container" class="main-container hidden">
-        <h1>✏️ 품사 마스터 플레이</h1>
-        <hr>
+        <div class="top-nav">
+            <button id="prev-btn" class="btn-nav">⬅️ 이전 문제</button>
+            <div class="attempt-info">도전: <span id="attempt-count">1</span>/4</div>
+        </div>
         
         <div class="score-board">
-            <span>성공한 문제: <strong id="score">0</strong>개</span>
-            <span>도전 기회: <strong id="attempt-count">1</strong> / 4</span>
+            <span>성공: <strong id="score">0</strong></span>
+            <span>현재: <strong id="question-count">1</strong>/9</span>
         </div>
 
         <div class="question-box">
-            <p class="instruction">자기 이름이 나오면 알맞은 품사를 골라주세요!</p>
             <div id="word-display">단어</div>
         </div>
 
         <div id="strong-hint-box" class="strong-hint-box hidden">
-            <h4>💡 SOS! 강력한 문법 힌트</h4>
-            <p id="strong-hint-text">힌트 내용이 여기에 표시됩니다.</p>
+            <p id="strong-hint-text"></p>
         </div>
 
         <div class="member-status-box" id="member-badges-container"></div>
+
+        <div id="anonymous-result-box" class="anonymous-result-box hidden">
+            <h4>📊 우리 모둠의 선택 현황 (익명)</h4>
+            <div id="result-stat-display"></div>
+        </div>
 
         <div class="options-grid" id="options-container">
             <button class="btn-option" data-pos="명사">명사</button>
@@ -64,12 +64,20 @@
         </div>
 
         <div id="remedial-box" class="remedial-box hidden">
-            <h3>⚠️ 틀린 모둠원이 있습니다!</h3>
-            <p class="dis-text">모둠원들과 상의하여 이 단어가 왜 그 품사인지 <strong>올바른 문법적 근거</strong>를 객관식 보기에서 골라보세요.</p>
+            <h3>🧐 문법 근거를 보강합시다!</h3>
+            <p class="dis-text">세 가지 기준을 모두 올바르게 선택해야 재도전이 가능합니다.</p>
             
-            <div id="reason-options-area"></div>
+            <div class="criteria-step" id="step-form">
+                <strong>1. 형태:</strong> <select class="reason-select" id="sel-form"></select>
+            </div>
+            <div class="criteria-step" id="step-func">
+                <strong>2. 기능:</strong> <select class="reason-select" id="sel-func"></select>
+            </div>
+            <div class="criteria-step" id="step-mean">
+                <strong>3. 의미:</strong> <select class="reason-select" id="sel-mean"></select>
+            </div>
             
-            <button id="retry-quiz-btn" class="btn-retry hidden">🔄 근거 확인 완료! 다시 도전하기</button>
+            <button id="retry-quiz-btn" class="btn-retry">모든 근거 확인 완료! 다시 풀기</button>
         </div>
 
         <div id="feedback-box" class="feedback-box hidden">
