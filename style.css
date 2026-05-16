@@ -16,7 +16,7 @@ body {
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     width: 100%;
-    max-width: 500px;
+    max-width: 520px;
     text-align: center;
 }
 
@@ -24,101 +24,79 @@ h1 { color: #2c3e50; font-size: 1.6rem; margin: 0 0 10px 0; }
 .subtitle { color: #7f8c8d; font-size: 0.95rem; margin: 0 0 15px 0; }
 hr { border: 0; height: 1px; background: #eee; margin-bottom: 20px; }
 
-/* 설정 화면 스타일 */
-.setup-group {
-    margin-bottom: 25px;
-    font-size: 1.05rem;
-}
-.setup-group select {
-    padding: 8px 12px;
-    font-size: 1rem;
-    border-radius: 6px;
-    border: 2px solid #cbd5e0;
-}
-.instruction-text {
-    text-align: left;
-    font-weight: bold;
-    color: #4a5568;
-    margin-bottom: 10px;
-}
-.input-name-field {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    box-sizing: border-box;
-    border: 1px solid #cbd5e0;
-    border-radius: 8px;
-    font-size: 0.95rem;
-}
+/* 설정창 */
+.setup-group { margin-bottom: 25px; font-size: 1.05rem; }
+.setup-group select { padding: 8px 12px; font-size: 1rem; border-radius: 6px; border: 2px solid #cbd5e0; }
+.instruction-text { text-align: left; font-weight: bold; color: #4a5568; margin-bottom: 10px; }
+.input-name-field { width: 100%; padding: 10px; margin-bottom: 10px; box-sizing: border-box; border: 1px solid #cbd5e0; border-radius: 8px; font-size: 0.95rem; }
 
-/* 대형 버튼 스타일 */
-.btn-main {
-    width: 100%;
-    background-color: #3182ce;
-    color: white;
-    border: none;
-    padding: 14px;
-    font-size: 1.1rem;
-    border-radius: 10px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 15px;
-}
+.btn-main { width: 100%; background-color: #3182ce; color: white; border: none; padding: 14px; font-size: 1.1rem; border-radius: 10px; font-weight: bold; cursor: pointer; }
 .btn-main:hover { background-color: #2b6cb0; }
 
-/* 퀴즈 공통 레이아웃 */
-.score-board { display: flex; justify-content: space-between; color: #555; font-weight: bold; margin-bottom: 15px; }
+/* 플레이판 */
+.score-board { display: flex; justify-content: space-between; color: #555; font-weight: bold; margin-bottom: 15px; font-size: 1.05rem; }
 .question-box { background-color: #eef7f9; padding: 20px; border-radius: 12px; margin-bottom: 15px; }
 .instruction { margin: 0 0 5px 0; color: #7f8c8d; font-size: 0.9rem; }
 #word-display { font-size: 2.6rem; font-weight: bold; color: #2980b9; }
 
-/* 유연한 모둠원 배지 스타일 (유동적 인원 대응) */
-.member-status-box {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 20px;
+/* 강력한 힌트 박스 스타일 */
+.strong-hint-box {
+    background-color: #fffbeb;
+    border: 2px dashed #d97706;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    text-align: left;
 }
-.member-badge {
-    flex: 1;
-    min-width: 75px;
-    background-color: #f1f3f5;
-    border: 2px solid #e2e8f0;
-    padding: 8px 4px;
-    border-radius: 8px;
-    font-size: 0.85rem;
-    color: #718096;
-    font-weight: bold;
-    transition: all 0.3s ease;
-}
-.member-badge.active {
-    background-color: #ebf8ff;
-    border-color: #3182ce;
-    color: #2b6cb0;
-    box-shadow: 0 0 8px rgba(49, 130, 206, 0.3);
-}
+.strong-hint-box h4 { margin: 0 0 5px 0; color: #b45309; font-size: 1rem; }
+#strong-hint-text { margin: 0; font-size: 0.9rem; color: #78350f; line-height: 1.4; }
+
+/* 배지 스타일 */
+.member-status-box { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.member-badge { flex: 1; min-width: 75px; background-color: #f1f3f5; border: 2px solid #e2e8f0; padding: 8px 4px; border-radius: 8px; font-size: 0.85rem; color: #718096; font-weight: bold; }
+.member-badge.active { background-color: #ebf8ff; border-color: #3182ce; color: #2b6cb0; box-shadow: 0 0 8px rgba(49, 130, 206, 0.3); }
 .member-badge.done { background-color: #e6fffa; border-color: #319795; color: #234e52; }
 .status { font-size: 0.75rem; font-weight: normal; display: block; margin-top: 2px; }
 
-/* 9품사 그리드 및 기타 요소 */
+/* 품사 버튼 */
 .options-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
 .btn-option { background-color: #fff; border: 2px solid #e2e8f0; border-radius: 10px; padding: 15px 5px; font-size: 1rem; font-weight: bold; color: #4a5568; cursor: pointer; }
 .btn-option:hover { background-color: #f7fafc; }
 
-/* 기록장 및 피드백 상자 */
-.discussion-box { background-color: #fffaf0; border: 2px solid #dd6b20; padding: 20px; border-radius: 12px; text-align: left; margin-top: 15px; }
-.discussion-box h3 { color: #dd6b20; font-size: 1.1rem; margin: 0 0 10px 0; text-align: center; }
+/* 근거 객관식 학습 패널 */
+.remedial-box { background-color: #fffaf0; border: 2px solid #dd6b20; padding: 20px; border-radius: 12px; text-align: left; margin-top: 15px; }
+.remedial-box h3 { color: #dd6b20; font-size: 1.1rem; margin: 0 0 10px 0; text-align: center; }
 .dis-text { font-size: 0.9rem; color: #4a5568; margin: 0 0 15px 0; line-height: 1.4; }
-.select-group { margin-bottom: 12px; font-size: 0.95rem; }
-.select-group select { padding: 6px; border-radius: 6px; border: 1px solid #cbd5e0; }
-#discussion-input { width: 100%; height: 80px; padding: 10px; box-sizing: border-box; border: 1px solid #cbd5e0; border-radius: 8px; resize: none; font-family: inherit; margin-bottom: 15px; }
-.btn-submit { width: 100%; background-color: #dd6b20; color: white; border: none; padding: 12px; font-size: 1rem; border-radius: 8px; font-weight: bold; cursor: pointer; }
-.btn-submit:hover { background-color: #c05621; }
 
+/* 근거 선택 버튼 */
+.btn-reason {
+    display: block;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #cbd5e0;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 8px;
+    text-align: left;
+    font-size: 0.9rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.btn-reason:hover { background-color: #f7fafc; }
+.btn-reason.correct { background-color: #def7ec; border-color: #31c74d; color: #03543f; font-weight: bold; }
+.btn-reason.wrong { background-color: #fde8e8; border-color: #f8b4b4; color: #9b1c1c; opacity: 0.6; }
+
+.btn-retry { width: 100%; background-color: #dd6b20; color: white; border: none; padding: 12px; font-size: 1rem; border-radius: 8px; font-weight: bold; cursor: pointer; margin-top: 10px; }
+
+/* 정답/기회소진 결과 상자 */
 .feedback-box { background-color: #f0fff4; border: 2px solid #38a169; padding: 20px; border-radius: 12px; margin-top: 15px; }
-#feedback-text { font-size: 1.4rem; font-weight: bold; color: #276749; margin: 0 0 10px 0; }
+.feedback-box.fail-theme { background-color: #fdf2f2; border-color: #f8b4b4; } /* 기회 소진용 스킨 */
+#feedback-text { font-size: 1.4rem; font-weight: bold; color: #276749; margin: 0 0 10px 0; text-align: center; }
+.feedback-box.fail-theme #feedback-text { color: #9b1c1c; }
 .praise-box { background-color: white; border-left: 5px solid #38a169; padding: 12px; font-size: 1rem; color: #234e52; text-align: left; line-height: 1.5; margin-bottom: 15px; }
+.feedback-box.fail-theme .praise-box { border-left-color: #f8b4b4; color: #7f1d1d; }
 .btn-next { width: 100%; background-color: #2f855a; color: white; border: none; padding: 12px; font-size: 1rem; border-radius: 8px; font-weight: bold; cursor: pointer; }
+.feedback-box.fail-theme .btn-next { background-color: #c81e1e; }
 
 .hidden { display: none !important; }
