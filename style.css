@@ -86,50 +86,87 @@ hr {
     border-color: #cbd5e0;
 }
 
-/* 정답/오답 피드백 상자 */
+/* 피드백 상자 구조 및 색상 */
 .feedback-box {
-    background-color: #fdfefe;
+    background-color: #fafbfc;
     border: 2px solid #e2e8f0;
-    padding: 15px;
+    padding: 20px;
     border-radius: 12px;
     margin-top: 15px;
+    text-align: left; /* 설명 가독성을 위해 좌측 정렬 */
 }
 
 .hidden {
     display: none;
 }
 
-.correct {
-    color: #2ecc71;
-    font-weight: bold;
+#feedback-text {
+    text-align: center;
     font-size: 1.3rem;
-    margin: 5px 0;
+    font-weight: bold;
+    margin: 0 0 15px 0;
 }
 
-.incorrect {
-    color: #e74c3c;
+.correct-title { color: #2ecc71; }
+.incorrect-title { color: #e74c3c; }
+
+/* 칭찬 상자 스타일 */
+.praise-box {
+    background-color: #e8f8f5;
+    border-left: 5px solid #2ecc71;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #117a65;
     font-weight: bold;
-    font-size: 1.3rem;
-    margin: 5px 0;
+    text-align: center;
+    margin-bottom: 15px;
 }
 
-#explanation-text {
-    color: #555;
+/* 형태, 기능, 의미 오답 해설 상자 스타일 */
+.analysis-box {
+    background-color: #fdf2f2;
+    border-left: 5px solid #e74c3c;
+    padding: 12px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.analysis-box p {
+    margin: 0 0 8px 0;
+    font-weight: bold;
+    color: #78281f;
+}
+
+.analysis-box ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.analysis-box li {
     font-size: 0.95rem;
-    line-height: 1.5;
-    margin: 5px 0 15px 0;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.analysis-box li strong {
+    color: #111;
 }
 
 /* 다음 문제 버튼 */
 .btn-next {
+    display: block;
+    width: 100%;
     background-color: #34495e;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 12px;
     font-size: 1rem;
     border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
+    text-align: center;
 }
 
 .btn-next:hover {
