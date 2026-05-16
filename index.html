@@ -3,23 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>신나는 중학 국어 품사 마스터</title>
+    <title>함께 푸는 중학 국어 품사 마스터</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="quiz-container">
-        <h1>✏️ 중학 국어 품사 마스터</h1>
+    <div id="setup-container" class="main-container">
+        <h1>👥 모둠 협동 품사 마스터</h1>
+        <p class="subtitle">시작하기 전에 모둠 정보를 입력해 주세요.</p>
+        <hr>
+        
+        <div class="setup-group">
+            <label for="member-count"><strong>📌 모둠 인원 선택:</strong></label>
+            <select id="member-count">
+                <option value="2">2명</option>
+                <option value="3">3명</option>
+                <option value="4" selected>4명 (기본)</option>
+                <option value="5">5명</option>
+                <option value="6">6명</option>
+            </select>
+        </div>
+
+        <div id="name-inputs-area">
+            <p class="instruction-text">모둠원 이름을 순서대로 적어주세요:</p>
+            </div>
+
+        <button id="start-quiz-btn" class="btn-main">품사 퀴즈 시작하기 🚀</button>
+    </div>
+
+    <div id="quiz-container" class="main-container hidden">
+        <h1>✏️ 품사 마스터 플레이</h1>
         <hr>
         
         <div class="score-board">
-            <span>현재 점수: <strong id="score">0</strong>점</span>
+            <span>성공한 문제: <strong id="score">0</strong>개</span>
             <span>문제 진행: <strong id="question-count">1</strong> / 9</span>
         </div>
 
         <div class="question-box">
-            <p class="instruction">제시된 단어의 알맞은 품사를 골라보세요!</p>
-            <div id="word-display">하늘</div>
+            <p class="instruction">자기 이름이 나오면 알맞은 품사를 골라주세요!</p>
+            <div id="word-display">단어</div>
         </div>
+
+        <div class="member-status-box" id="member-badges-container"></div>
 
         <div class="options-grid" id="options-container">
             <button class="btn-option" data-pos="명사">명사</button>
@@ -31,6 +56,23 @@
             <button class="btn-option" data-pos="관형사">관형사</button>
             <button class="btn-option" data-pos="부사">부사</button>
             <button class="btn-option" data-pos="감탄사">감탄사</button>
+        </div>
+
+        <div id="discussion-box" class="discussion-box hidden">
+            <h3>⚠️ 틀린 모둠원이 있습니다! 토의가 필요해요.</h3>
+            <p class="dis-text">모둠원들과 상의하여 이 단어의 품사 분류 근거를 하나만 골라 기록창에 적어보세요.</p>
+            
+            <div class="select-group">
+                <label for="criteria-select"><strong>📌 분류 기준:</strong></label>
+                <select id="criteria-select">
+                    <option value="형태">형태 (가변어 / 불변어)</option>
+                    <option value="기능">기능 (체언/용언/수식언/관계언/독립언)</option>
+                    <option value="의미">의미 (사물의 이름/행동/상태 등)</option>
+                </select>
+            </div>
+            
+            <textarea id="discussion-input" placeholder="여기에 모둠원들과 협의한 구체적인 문법적 근거를 기록하세요.&#10;(예: '바다'는 형태가 변하지 않으므로 불변어이다.)"></textarea>
+            <button id="submit-discussion-btn" class="btn-submit">근거 제출하고 다시 도전하기 🔄</button>
         </div>
 
         <div id="feedback-box" class="feedback-box hidden">
