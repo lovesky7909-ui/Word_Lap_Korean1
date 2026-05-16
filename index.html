@@ -25,7 +25,7 @@
 
         <div id="name-inputs-area">
             <p class="instruction-text">모둠원 이름을 순서대로 적어주세요:</p>
-            </div>
+        </div>
 
         <button id="start-quiz-btn" class="btn-main">품사 퀴즈 시작하기 🚀</button>
     </div>
@@ -36,12 +36,17 @@
         
         <div class="score-board">
             <span>성공한 문제: <strong id="score">0</strong>개</span>
-            <span>문제 진행: <strong id="question-count">1</strong> / 9</span>
+            <span>도전 기회: <strong id="attempt-count">1</strong> / 4</span>
         </div>
 
         <div class="question-box">
             <p class="instruction">자기 이름이 나오면 알맞은 품사를 골라주세요!</p>
             <div id="word-display">단어</div>
+        </div>
+
+        <div id="strong-hint-box" class="strong-hint-box hidden">
+            <h4>💡 SOS! 강력한 문법 힌트</h4>
+            <p id="strong-hint-text">힌트 내용이 여기에 표시됩니다.</p>
         </div>
 
         <div class="member-status-box" id="member-badges-container"></div>
@@ -58,21 +63,13 @@
             <button class="btn-option" data-pos="감탄사">감탄사</button>
         </div>
 
-        <div id="discussion-box" class="discussion-box hidden">
-            <h3>⚠️ 틀린 모둠원이 있습니다! 토의가 필요해요.</h3>
-            <p class="dis-text">모둠원들과 상의하여 이 단어의 품사 분류 근거를 하나만 골라 기록창에 적어보세요.</p>
+        <div id="remedial-box" class="remedial-box hidden">
+            <h3>⚠️ 틀린 모둠원이 있습니다!</h3>
+            <p class="dis-text">모둠원들과 상의하여 이 단어가 왜 그 품사인지 <strong>올바른 문법적 근거</strong>를 객관식 보기에서 골라보세요.</p>
             
-            <div class="select-group">
-                <label for="criteria-select"><strong>📌 분류 기준:</strong></label>
-                <select id="criteria-select">
-                    <option value="형태">형태 (가변어 / 불변어)</option>
-                    <option value="기능">기능 (체언/용언/수식언/관계언/독립언)</option>
-                    <option value="의미">의미 (사물의 이름/행동/상태 등)</option>
-                </select>
-            </div>
+            <div id="reason-options-area"></div>
             
-            <textarea id="discussion-input" placeholder="여기에 모둠원들과 협의한 구체적인 문법적 근거를 기록하세요.&#10;(예: '바다'는 형태가 변하지 않으므로 불변어이다.)"></textarea>
-            <button id="submit-discussion-btn" class="btn-submit">근거 제출하고 다시 도전하기 🔄</button>
+            <button id="retry-quiz-btn" class="btn-retry hidden">🔄 근거 확인 완료! 다시 도전하기</button>
         </div>
 
         <div id="feedback-box" class="feedback-box hidden">
