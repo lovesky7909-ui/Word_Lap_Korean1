@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>신나는 중학 국어 품사 마스터</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>✏️ 중학 국어 품사 마스터</h1>
+        <hr>
+        
+        <div class="score-board">
+            <span>현재 점수: <strong id="score">0</strong>점</span>
+            <span>문제 진행: <strong id="question-count">1</strong> / 9</span>
+        </div>
+
+        <div class="question-box">
+            <p class="instruction">제시된 단어의 알맞은 품사를 골라보세요!</p>
+            <div id="word-display">하늘</div>
+        </div>
+
+        <div class="options-grid" id="options-container">
+            <button class="btn-option" data-pos="명사">명사</button>
+            <button class="btn-option" data-pos="대명사">대명사</button>
+            <button class="btn-option" data-pos="수사">수사</button>
+            <button class="btn-option" data-pos="조사">조사</button>
+            <button class="btn-option" data-pos="동사">동사</button>
+            <button class="btn-option" data-pos="형용사">형용사</button>
+            <button class="btn-option" data-pos="관형사">관형사</button>
+            <button class="btn-option" data-pos="부사">부사</button>
+            <button class="btn-option" data-pos="감탄사">감탄사</button>
+        </div>
+
+        <div id="feedback-box" class="feedback-box hidden">
+            <p id="feedback-text"></p>
+            <p id="explanation-text"></p>
+            <button id="next-btn" class="btn-next">다음 문제로 ➡️</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
