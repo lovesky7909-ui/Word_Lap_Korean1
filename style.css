@@ -1,36 +1,37 @@
-body { font-family: 'Malgun Gothic', sans-serif; background-color: #f8fafc; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 15px; }
-.main-container { background: white; padding: 25px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); width: 100%; max-width: 480px; }
+body { font-family: 'Malgun Gothic', sans-serif; background-color: #f1f5f9; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 10px; }
+.main-container { background: white; padding: 25px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); width: 100%; max-width: 500px; overflow: hidden; }
 .hidden { display: none !important; }
 
-/* 네비게이션 */
-.top-nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
-.btn-nav { background: #edf2f7; border: none; padding: 8px 12px; border-radius: 8px; cursor: pointer; font-size: 0.85rem; }
-.attempt-info { font-weight: bold; color: #e53e3e; }
+/* 공통 버튼 */
+.btn-main { width: 100%; padding: 15px; border: none; border-radius: 12px; background: #3182ce; color: white; font-weight: bold; cursor: pointer; margin-top: 10px; }
+.btn-nav { background: #e2e8f0; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer; }
+
+/* 퀴즈 헤더 */
+.top-nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.team-tag { background: #ebf8ff; color: #2b6cb0; padding: 4px 10px; border-radius: 15px; font-weight: bold; font-size: 0.9rem; }
+.attempt-info { color: #e53e3e; font-weight: bold; }
 
 /* 문제 상자 */
-.question-box { background: #ebf8ff; padding: 25px; border-radius: 15px; margin-bottom: 15px; text-align: center; }
-#word-display { font-size: 2.5rem; font-weight: bold; color: #2b6cb0; }
-
-/* 익명 결과 통계 */
-.anonymous-result-box { background: #f7fafc; border: 1px solid #e2e8f0; padding: 15px; border-radius: 12px; margin-bottom: 15px; }
-.anonymous-result-box h4 { margin: 0 0 10px 0; font-size: 0.9rem; color: #4a5568; }
-.stat-bar { background: #edf2f7; margin-bottom: 5px; padding: 5px 10px; border-radius: 6px; font-size: 0.85rem; display: flex; justify-content: space-between; }
+.question-box { background: #f8fafc; border: 2px solid #e2e8f0; padding: 30px; border-radius: 15px; margin-bottom: 15px; text-align: center; }
+#word-display { font-size: 3rem; font-weight: bold; color: #1a365d; }
 
 /* 모둠원 배지 */
-.member-status-box { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 15px; justify-content: center; }
-.member-badge { padding: 6px 10px; background: #f1f5f9; border-radius: 6px; font-size: 0.8rem; color: #94a3b8; }
-.member-badge.active { background: #3182ce; color: white; }
+.member-status-box { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px; justify-content: center; }
+.member-badge { padding: 8px 12px; background: #f1f5f9; border-radius: 8px; font-size: 0.85rem; color: #94a3b8; border: 1px solid transparent; }
+.member-badge.active { background: #3182ce; color: white; border-color: #2b6cb0; }
 .member-badge.done { background: #e2e8f0; color: #475569; }
+
+/* 익명 결과 */
+.anonymous-result-box { background: #fff; border: 2px solid #3182ce; padding: 15px; border-radius: 15px; margin-bottom: 15px; }
+.stat-bar { background: #edf2f7; margin-bottom: 5px; padding: 8px; border-radius: 8px; display: flex; justify-content: space-between; font-size: 0.9rem; }
+.guide-text { font-size: 0.8rem; color: #718096; text-align: center; margin-top: 10px; }
 
 /* 9품사 버튼 */
 .options-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
-.btn-option { padding: 15px 5px; border: 1px solid #e2e8f0; border-radius: 10px; background: white; cursor: pointer; font-weight: bold; }
+.btn-option { padding: 15px 5px; border: 1px solid #e2e8f0; border-radius: 10px; background: white; cursor: pointer; font-weight: bold; transition: 0.2s; }
+.btn-option:hover { background: #edf2f7; }
 
-/* 3단계 보완 학습 */
-.remedial-box { background: #fffaf0; border: 1px solid #feebc8; padding: 20px; border-radius: 15px; margin-top: 15px; }
-.criteria-step { margin-bottom: 12px; font-size: 0.9rem; }
-.reason-select { width: 100%; margin-top: 5px; padding: 8px; border-radius: 6px; border: 1px solid #cbd5e0; }
-.btn-retry { width: 100%; padding: 12px; background: #dd6b20; color: white; border: none; border-radius: 10px; cursor: pointer; font-weight: bold; }
-
-.btn-main, .btn-next { width: 100%; padding: 15px; background: #3182ce; color: white; border: none; border-radius: 10px; cursor: pointer; font-weight: bold; font-size: 1rem; }
-.strong-hint-box { background: #fff5f5; border-left: 4px solid #f56565; padding: 10px; margin-bottom: 10px; font-size: 0.85rem; }
+/* 결과 페이지 */
+.rank-box { background: #f8fafc; padding: 15px; border-radius: 12px; margin-bottom: 15px; text-align: left; }
+.review-item { border-bottom: 1px solid #edf2f7; padding: 10px 0; text-align: left; }
+.review-item b { color: #3182ce; }
